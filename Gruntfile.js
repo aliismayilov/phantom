@@ -1,6 +1,6 @@
-module.exports = function (grunt) {	
+module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt, ['grunt-*', 'grunt-bump']);
-	
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		phantom: {
@@ -118,14 +118,14 @@ module.exports = function (grunt) {
 				],
 				overwrite: true,
 				replacements: [{
-					from: /UA-21512134-2/,
+					from: /UA-16061400-6/,
 					to: function(matchedWord, index, fullText, regexMatches) {
 						return 'UA-XXXXXXXX-X';
 					}
 				},{
-					from: /bartingerat/,
+					from: /blogaliipro/,
 					to: function(matchedWord, index, fullText, regexMatches) {
-						return 'yourDisqusShortname';
+						return 'blogaliipro';
 					}
 				}]
 			},
@@ -155,8 +155,8 @@ module.exports = function (grunt) {
 			dev: {
 				options: {
 					src: '<%= phantom.dist %>/',
-					dest: '/home/ubuntu/ghost/content/themes/phantom',
-					host: 'ubuntu@bartinger.at',
+					dest: '/var/www/ghost/content/themes/phantom',
+					host: 'root@blog.alii.pro',
 					syncDestIgnoreExcl: true
 				}
 			}
